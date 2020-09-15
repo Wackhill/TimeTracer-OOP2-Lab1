@@ -1,0 +1,9 @@
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\bin\Debug\ExecutionTimeTracer.exe
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\bin\Debug\ExecutionTimeTracer.pdb
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\obj\Debug\ExecutionTimeTracer.csprojAssemblyReference.cache
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\obj\Debug\ExecutionTimeTracer.csproj.CoreCompileInputs.cache
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\obj\Debug\ExecutionTimeTracer.exe
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\obj\Debug\ExecutionTimeTracer.pdb
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\bin\Debug\Newtonsoft.Json.dll
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\bin\Debug\Newtonsoft.Json.xml
+D:\Don't hurt me\TimeTracer\TimeTracer\ExecutionTimeTracer\obj\Debug\ExecutionTimeTracer.csproj.CopyComplete
