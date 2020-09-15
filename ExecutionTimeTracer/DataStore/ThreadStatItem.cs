@@ -53,5 +53,16 @@ namespace ExecutionTimeTracer.DataStore
             ActiveTime = fullTime;
             return fullTime;
         }
+
+        public override string ToString()
+        {
+            string result = "";
+            foreach (var method in Methods)
+            {
+                result += method.MethodName + "\n";
+            }
+
+            return result;
+        }
     }
 }

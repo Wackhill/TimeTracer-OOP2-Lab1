@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace ExecutionTimeTracer.DataStore
 {
@@ -8,7 +9,7 @@ namespace ExecutionTimeTracer.DataStore
     {
         private Stopwatch _stopwatch;
 
-        public string MethodName { get; set; }
+        public string MethodName { get; }
 
         public long ActiveTime { get; set; }
 
@@ -26,7 +27,7 @@ namespace ExecutionTimeTracer.DataStore
 
         public string ClassName;
         
-        public List<MethodStatItem> ChildMethods { get;  }
+        public List<MethodStatItem> ChildMethods { get; }
 
         public MethodStatItem() 
         {
@@ -58,7 +59,29 @@ namespace ExecutionTimeTracer.DataStore
 
         public void AddChildMethod(MethodStatItem methodStatItem)
         {
-            ChildMethods.Add(methodStatItem);
+            if (ChildExists(methodStatItem))
+            {
+                var listItem = ChildMethods.FirstOrDefault(item => item.MethodName == methodStatItem.MethodName);
+                if (listItem != null) listItem.ActiveTime += methodStatItem.ActiveTime;
+            }
+            else
+            {
+                ChildMethods.Add(methodStatItem);   
+            }
+        }
+
+        private bool ChildExists(MethodStatItem methodStatItem)
+        {
+            foreach (var method in ChildMethods)
+            {
+                if (method.MethodName.Equals(methodStatItem.MethodName))
+                {
+                    methodStatItem.ActiveTime += method.ActiveTime;
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace ExecutionTimeTracer.Tracer
 
             StackTrace stackTrace = new StackTrace();
             MethodBase method = stackTrace.GetFrame(1).GetMethod();
-            MethodStatItem methodStatItem = 
+            MethodStatItem methodStatItem =
                 new MethodStatItem(method.Name, method.ReflectedType?.Name);
             
             methodStatItem.StartTrace();

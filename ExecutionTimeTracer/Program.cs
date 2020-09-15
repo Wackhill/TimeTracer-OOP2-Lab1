@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Threading;
 using ExecutionTimeTracer.ResultProvider;
 
 namespace ExecutionTimeTracer
@@ -9,8 +9,7 @@ namespace ExecutionTimeTracer
         public static void Main(string[] args)
         {
             Test1();
-            Console.WriteLine("Factorial: " + Factorial(10));
-            
+
             ConsoleResultProvider consoleResultProvider = new ConsoleResultProvider();
             
             JsonSerializer json = new JsonSerializer();
@@ -21,6 +20,7 @@ namespace ExecutionTimeTracer
         {
             _tracer.StartTrace();
 
+            Thread.Sleep(1000);
             Test2();
             
             _tracer.StopTrace();
@@ -28,12 +28,12 @@ namespace ExecutionTimeTracer
         
         private static void Test2()
         {
-            //_tracer.StartTrace();
+            _tracer.StartTrace();
             
             Test3();
             Fak(1);
 
-            //_tracer.StopTrace();
+            _tracer.StopTrace();
         }
 
         private static void Test3()
@@ -48,6 +48,8 @@ namespace ExecutionTimeTracer
         private static long Factorial(int number)
         {
             _tracer.StartTrace();
+            
+            Thread.Sleep(100);
             
             if (number == 1)
             {
