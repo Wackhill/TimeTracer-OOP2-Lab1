@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 namespace ExecutionTimeTracer.DataStore
 {
+    /*
+     * ThreadStruct
+     *
+     * Id
+     * ExecutionTime
+     * Methods[]
+     */
     public class ThreadStatItem
     {
         public int Id { get; }

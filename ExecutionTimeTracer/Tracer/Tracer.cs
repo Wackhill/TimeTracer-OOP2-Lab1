@@ -56,7 +56,7 @@ namespace ExecutionTimeTracer.Tracer
             IsResultReady = true;
             return _result;
         }
-        
+
         private void GetThreadsActiveTime()
         {
             foreach (var thread in _result.ThreadsStat)

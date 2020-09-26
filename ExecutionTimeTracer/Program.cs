@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using ExecutionTimeTracer.ResultProvider;
 
 namespace ExecutionTimeTracer
@@ -14,6 +15,8 @@ namespace ExecutionTimeTracer
             
             JsonSerializer json = new JsonSerializer();
             consoleResultProvider.WriteResult(json.Serialize(_tracer.GetTraceResult()));
+
+            Console.ReadLine();
         }
         
         private static void Test1()

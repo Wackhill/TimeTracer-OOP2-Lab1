@@ -1,15 +1,17 @@
-﻿namespace ExecutionTimeTracer.DataStore
+﻿using System;
+using System.Collections.Generic;
+
+namespace ExecutionTimeTracer.DataStore
 {
     public class TraceResult
     {
-        public ThreadStatStore<int, ThreadStatItem> ThreadsStat { get; }
+        public ThreadStatStore<int, ThreadStatItem> ThreadsStat { get; set; }
 
         public TraceResult()
         {
             ThreadsStat = new ThreadStatStore<int, ThreadStatItem>();
         }
         
-        /*
         public int GetMethodsActiveTime(int threadId)
         {
             if (ThreadsStat.IsEmpty || !ThreadsStat.Keys.Contains(threadId))
@@ -26,10 +28,9 @@
             }
 
             return (int)Math.Truncate(result);
-        }
-        */
 
-        /*
+        }
+
         private double GetInnerMethodsActiveTime(List<MethodStatItem> methods)
         {
             if (methods == null)
@@ -47,6 +48,5 @@
 
             return activeTime;
         }
-        */
     }
 }
