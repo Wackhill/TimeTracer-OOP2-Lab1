@@ -13,18 +13,6 @@ namespace ExecutionTimeTracer.DataStore
 
         public long ActiveTime { get; set; }
 
-        public string ActiveTimeString
-        {
-            get
-            {
-                return Math.Round((double) ActiveTime) + "ms";
-            }
-            set
-            {
-                ActiveTimeString = value;
-            }
-        }
-
         public string ClassName;
         
         public List<MethodStatItem> ChildMethods { get; }
