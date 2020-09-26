@@ -1,25 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace ExecutionTimeTracer.DataStore
 {
-    /*
-     * ThreadStruct
-     *
-     * Id
-     * ExecutionTime
-     * Methods[]
-     */
+    [Serializable]
+    [XmlRoot("method")]
     public class ThreadStatItem
     {
-        public int Id { get; }
+        [XmlElement("id")]
+        public int Id { get; set; }
+        
+        [XmlElement("time")]
         public double ActiveTime { get; set; }
         
-        public List<MethodStatItem> Methods { get; }
+        [XmlElement("methods")]
+        public List<MethodStatItem> Methods { get; set; }
 
-        public Stack<MethodStatItem> LastStackMethods { get; }
+        [XmlIgnore]
+        public Stack<MethodStatItem> LastStackMethods { get; set; }
 
-        public int MethodsNumber { get; private set; }
+        [XmlElement("methodsNumber")]
+        public int MethodsNumber { get; set; }
 
         private ThreadStatItem()
         {

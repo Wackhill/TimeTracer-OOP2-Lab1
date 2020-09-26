@@ -21,9 +21,11 @@
         </e>
         <e p="ResultProvider" t="Include">
           <e p="ConsoleResultProvider.cs" t="Include" />
+          <e p="FileResultProvider.cs" t="Include" />
           <e p="IResultProvider.cs" t="Include" />
           <e p="ISerializer.cs" t="Include" />
           <e p="JsonSerializer.cs" t="Include" />
+          <e p="XmlSerializer.cs" t="Include" />
         </e>
         <e p="Tracer" t="Include">
           <e p="ITracer.cs" t="Include" />

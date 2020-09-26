@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ExecutionTimeTracer.DataStore
 {
+    [Serializable]
     public class TraceResult
     {
         public ThreadStatStore<int, ThreadStatItem> ThreadsStat { get; set; }

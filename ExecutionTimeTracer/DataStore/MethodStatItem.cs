@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Xml.Serialization;
 
 namespace ExecutionTimeTracer.DataStore
 {
+    [Serializable]
+    [XmlRoot("method")]
     public class MethodStatItem
     {
+        [XmlIgnore]
         private Stopwatch _stopwatch;
 
-        public string MethodName { get; }
+        [XmlElement("methodName")]
+        public string MethodName { get; set; }
 
+        [XmlElement("time")]
         public long ActiveTime { get; set; }
 
-        public string ClassName;
+        [XmlElement("className")]
+        public string ClassName { get; set; }
         
-        public List<MethodStatItem> ChildMethods { get; }
+        [XmlElement("methods")]
+        public List<MethodStatItem> ChildMethods { get; set; }
 
         public MethodStatItem() 
         {
